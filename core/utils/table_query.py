@@ -13,7 +13,7 @@ table_query = [
         "head": ["","ID","NOMBRE", "TELEFONO", "CORREO","ESTADO", "CARGO ID", "CARGO"],
         "params": ["_p1", "_p2", "_p3","_id"],
         "def": ["", "0", "", "0"],
-       "query01": "CALL spUsuarios(1, '_p1', _p2,'', _id, 100)",
+       "query01": "CALL spUsuarios(1, '_p1', _p2,'', _id, 0)",
        "query02": "CALL spUsuarios(2, '', 0,'', 0, 0)",
        "query03": "CALL spUsuarios(3, \"_p1\", 0, '', 0, 0)",
        "query04": "CALL spUsuarios(4,\"_p1\", _p2, \"_p3\", 0, 0)",
@@ -46,7 +46,6 @@ table_query = [
        "query04": "CALL spFuncionalidades(4,\"_p1\", _p2, 0, 0)",
        "query05": "CALL spFuncionalidades(5, '_p1', 0, 0, 0)",
     },
-
     {
         "entidad": "perfiles",
         "query": [],
@@ -54,10 +53,22 @@ table_query = [
         "params": ["_p1", "_p2", "_p3", '_pkToDelete', '_id'],
         "def":["", "0", "0", "", "0"],
         #(IN `_query` INT, IN `_p1` VARCHAR(250), IN `_p2` INT, IN `_p3` INT, IN `_pairsToDelete` JSON, IN `_id` INT, IN `_limit` INT)
-        "query01": "CALL spPerfiles(1, '', '_p2', '_p3', '\"\"', _id, 100)",
+        "query01": "CALL spPerfiles(1, '', '_p2', '_p3', '\"\"', _id, 0)",
         "query03": "CALL spPerfiles(3, '_p1', 0, 0, '\"\"', 0, 0)",
         "query04": "CALL spPerfiles(4, '_p1', _p2, _p3, '\"\"', 0, 0)",
         "query05": "CALL spPerfiles(5, '', 0, 0, '_pkToDelete', 0, 0)",
+    },
+    {
+        "entidad": "permisos",
+        "query": [],
+        "head": ["", "USUARIO_ID", "USUARIO", "FUNCIONALIDAD_ID", "FUNCIONALIDAD", "PERMISO"],
+        "params": ["_p1", "_p2", "_p3", '_pkToDelete', '_id'],
+        "def":["", "0", "0", "", "0"],
+        #(IN `_query` INT, IN `_p1` VARCHAR(250), IN `_p2` INT, IN `_p3` INT, IN `_pairsToDelete` JSON, IN `_id` INT, IN `_limit` INT)
+        "query01": "CALL spPermisos(1, '', '_p2', '_p3', '\"\"', _id, 0)",
+        "query03": "CALL spPermisos(3, '_p1', 0, 0, '\"\"', 0, 0)",
+        "query04": "CALL spPermisos(4, '_p1', _p2, _p3, '\"\"', 0, 0)",
+        "query05": "CALL spPermisos(5, '', 0, 0, '_pkToDelete', 0, 0)",
     },
     {
         "entidad": "proveedores",
